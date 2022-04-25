@@ -1,0 +1,45 @@
+.header{
+  padding: 0;
+  border-bottom: 2px solid orangered;
+  display: flex;
+  justify-content: space-between;
+  background-color: lightsalmon;
+
+
+nav ul{
+  list-style: none;
+  margin: 0;
+}
+
+nav ul li a{
+  padding: 1em;
+  display: inline-block;
+}
+
+  .left, .rigth{
+    a{
+      font-size: 16px;
+      margin: 5px;
+    }
+
+    a:hover{
+      color: rgb(253, 5, 5);
+    }
+  }
+
+  .left a{
+    font-size: 17px !important;
+    font-weight: bold;
+    color: rgb(1, 31, 49);
+    text-transform: uppercase !important;
+  }
+
+  .rigth a{
+    color: white;
+
+  }
+
+}
+
+
+
