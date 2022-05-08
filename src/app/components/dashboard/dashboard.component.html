@@ -1,26 +1,50 @@
 <mat-toolbar class="header">
   <div class="left">
-    <a href="#" routerLink="/">JovethTecnologia 💻</a>
+    <span mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+        menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+        close
+      </mat-icon>
+    </span>
+    <a href="#" routerLink="/admin">JovethTecnologia 💻</a>
   </div>
   <div class="rigth">
-    <nav>
-      <ul>
-        <li>
-          <a href="">Carrinho</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="menu-toolbar">
+      <mat-icon>help</mat-icon>
+      <mat-icon>settings</mat-icon>
+      <img class="img" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="">
+
+    </div>
   </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
-    <mat-sidenav mode="side" align="start" opened>
-        hola
+    <mat-sidenav #sidenav="matSidenav">
+      <div class="avatar">
+        <img class="img" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="">
+      <h4 class="name">Djon Vindeisel</h4>
+      <p class="funcao">Engenheiro de Software</p>
+      </div>
+      <mat-divider></mat-divider>
+        <a class="menu-button" routerLink="/admin">
+          <mat-icon>home</mat-icon>
+          <span>Início</span>
+        </a>
+        <a class="menu-button">
+          <mat-icon>group</mat-icon>
+          <a href="#" routerLink="/admin/employees">Funcionários</a>
+        </a>
+        <a class="menu-button">
+          <mat-icon>apps</mat-icon>
+          <span>Projectos</span>
+        </a>
     </mat-sidenav>
     <!-- Body -->
     <mat-sidenav-content>
       <div class="content ">
-        Main
+        <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
 
