@@ -6,18 +6,22 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from '../header/header.component';
 import { HomeComponent } from '../home/home.component';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     HomeComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,
     FastFoodRoutingModule,
     NgbRatingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ]
 })
 export class FastFoodModule { }
