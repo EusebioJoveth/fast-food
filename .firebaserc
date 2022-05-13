@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "jovethtecnologia-d15a2": {
+      "hosting": {
+        "fast-food": [
+          "jovethtecnologia-d15a2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jovethtecnologia-d15a2"
+  }
+}

@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "fast-food:build:production",
+            "firebaseProject": "jovethtecnologia-d15a2",
+            "firebaseHostingSite": "jovethtecnologia-d15a2"
+          }
         }
       }
     }
