@@ -1,87 +1,92 @@
-ul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
-}
+.home{
 
-ul li a{
-  height: 19.5rem;
-  width: 16rem;
-  border: 1px solid lightgrey;
-  border-radius: 1rem;
-  margin: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  color: #e72929;
-}
-
-li a:hover{
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.content{
-  padding: .5rem 1rem;
-  position: relative;
-}
-
-.favorite{
-  position: absolute;
-  top: .5rem;
-  right: 1rem;
-  font-size: 1.2rem;
-}
-
-.yes{
-  color: #e72929;
-}
-.not {
-  color: black;
-}
-
-.star{
-  margin-bottom: .2rem;
-}
-
-.product-item-footer{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .origins{
-    flex: 8;
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
   }
 
-  .origins span{
-    border-radius: 2rem;
-    background-color: whitesmoke;
-    color: gray;
-    font-size: .9rem;
-    margin-right: .3rem;
-    display: inline-block;
+  ul li a{
+    height: 19.5rem;
+    width: 16rem;
+    border: 1px solid lightgrey;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #e72929;
   }
 
-  .cook-time{
-    font-size: .9rem;
-    flex: 4;
-    text-align: right;
-   .icon{
-    color: gray;
-   }
-    span{
-      margin: 2px;
+  li a:hover{
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .content{
+    padding: .5rem 1rem;
+    position: relative;
+  }
+
+  .favorite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .yes{
+    color: #e72929;
+  }
+  .not {
+    color: black;
+  }
+
+  .star{
+    margin-bottom: .2rem;
+  }
+
+  .product-item-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .origins{
+      flex: 8;
+    }
+
+    .origins span{
+      border-radius: 2rem;
+      background-color: whitesmoke;
+      color: gray;
+      font-size: .9rem;
+      margin-right: .3rem;
+      display: inline-block;
+    }
+
+    .cook-time{
+      font-size: .9rem;
+      flex: 4;
+      text-align: right;
+     .icon{
+      color: gray;
+     }
+      span{
+        margin: 2px;
+      }
     }
   }
+
+  .price{
+    color: gray;
+    margin-top: .3rem;
+  }
+
+
+
+
+
 }
-
-.price{
-  color: gray;
-  margin-top: .3rem;
-}
-
-
-

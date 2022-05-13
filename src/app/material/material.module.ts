@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -14,13 +15,15 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatButtonModule
   ],
   exports: [
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatButtonModule
   ]
 })
 export class MaterialModule { }
