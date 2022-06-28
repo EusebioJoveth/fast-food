@@ -5,8 +5,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
-
-
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [],
@@ -16,14 +16,20 @@ import {MatButtonModule} from '@angular/material/button';
     MatSidenavModule,
     MatIconModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatAutocompleteModule
+
+
   ],
   exports: [
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatAutocompleteModule
   ]
 })
 export class MaterialModule { }

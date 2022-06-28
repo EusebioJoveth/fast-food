@@ -23,6 +23,11 @@ const routes: Routes = [
     .then(m=>m.EmployeesModule)
   },
 
+  {path: 'chat',
+    loadChildren: () => import('./components/chat/chat.module')
+    .then(m=>m.ChatModule)
+  },
+
   ]}
 ];
 

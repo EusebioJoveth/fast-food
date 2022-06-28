@@ -1,0 +1,21 @@
+.chat-container{
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.chat-list{
+  width: 40%;
+ // margin: 16px;
+  background-color: rgba(59, 131, 246, 0.295);
+  border-radius: 6px;
+
+  .search-input{
+    margin: 15px;
+  }
+}
+
+.messages{
+  width: 60%;
+  margin-left:5px;
+  border: 6px;
+}

@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
       if(params['item'])
       this.foods = this.serviceFood.getAll()
       .filter(food => food.name.toLowerCase().includes(params['item'].toLowerCase()));
+      else if(params['tag'])
+      this.foods = this.serviceFood.getAllFoodByTag(params['tag'])
       else
       this.foods = this.serviceFood.getAll();
 

@@ -8,6 +8,7 @@ const routes: Routes = [
   children:[
     {path: '', component: HomeComponent},
     {path: 'search/:item', component: HomeComponent},
+    {path: 'tag/:tag', component: HomeComponent},
 
     {path: '',
     redirectTo: '',
