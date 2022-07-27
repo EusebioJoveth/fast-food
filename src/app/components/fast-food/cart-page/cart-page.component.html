@@ -1,3 +1,43 @@
-<p>
-  cart-page works!
-</p>
+<div class="conttainer">
+  <ul>
+    <li *ngFor="let cartItem of cart.items">
+     <div>
+      <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+     </div>
+     <div>
+      <a routerLink="/fastFood/food/{{cartItem.food.id}}">
+        {{cartItem.food.name}}
+      </a>
+     </div>
+     <div>
+      <select #quantitySelect (change) = "changeQuantity(cartItem, quantitySelect.value)">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+     </div>
+
+     <div>
+      {{cartItem.price | currency}}
+     </div>
+
+     <button class="btn-remove" (click)="removeFromCart(cartItem)">
+      Remover
+     </button>
+
+    </li>
+  </ul>
+
+  <div class="checkout">
+    <div class="food-count">
+      {{cart.items.length}}
+    </div>
+    <div class="total-price">
+      {{cart.totalPrice | currency}}
+    </div>
+
+    <a routerLink="/fastFood/checkout">Fazer o check-out</a>
+  </div>
+</div>
