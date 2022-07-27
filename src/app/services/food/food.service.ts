@@ -45,7 +45,7 @@ export class FoodService {
       tags: ['FastFood', 'Lunch'],
     },
     {
-      id: 4.5,
+      id: 4,
       name: 'Arroz com legume',
       cookTime: '1-10',
       price: 300,
@@ -141,5 +141,9 @@ export class FoodService {
       {name: 'Fry', count: 1},
       {name: 'Soup', count: 1},
     ]
+  }
+
+  getFoodById(id:number): Foods{
+    return this.getAll().find(food => food.id == id)!;
   }
 }

@@ -1,7 +1,8 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { HomeComponent } from '../home/home.component';
+import { FoodPageComponent } from './food-page/food-page.component';
 
 const routes: Routes = [
   {path: '', component: HeaderComponent,
@@ -9,6 +10,7 @@ const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'search/:item', component: HomeComponent},
     {path: 'tag/:tag', component: HomeComponent},
+    {path: 'food/:id', component: FoodPageComponent},
 
     {path: '',
     redirectTo: '',
