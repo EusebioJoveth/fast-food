@@ -22,7 +22,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
   declarations: [
     AppComponent,
     DashboardComponent,
-    StartComponent
+    StartComponent,
   ],
   imports: [
     BrowserModule,

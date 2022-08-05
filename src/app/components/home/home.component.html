@@ -1,6 +1,7 @@
 <div class="home">
   <app-search></app-search>
   <app-tags></app-tags>
+  <app-not-found [visible]="!foods || foods.length <=0" resetLinkText="Voltar Na Página Anterior" notFoundMessage="Não Encontrado"></app-not-found>
 <ul>
   <li *ngFor="let food of foods">
     <a routerLink="/fastFood/food/{{food.id}}">

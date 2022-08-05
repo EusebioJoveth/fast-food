@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodPageComponent } from './food-page/food-page.component';
+import { NotFoundModule } from '../not-found/not-found.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FoodPageComponent } from './food-page/food-page.component';
     FastFoodRoutingModule,
     NgbRatingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    NotFoundModule
   ]
 })
 export class FastFoodModule { }
