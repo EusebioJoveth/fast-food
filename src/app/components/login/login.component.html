@@ -1,0 +1,25 @@
+<div class="login">
+<div class="left">Nossos Serviços</div>
+<div class="rigth">
+  <form [formGroup]="loginForm" class="mat-elevation-z5">
+    <mat-form-field>
+      <input matInput placeholder="Seu Email" formControlName="email" />
+      <mat-error *ngIf="email?.errors?.['required']">
+        Este campo é obrigatório
+      </mat-error>
+      <mat-error *ngIf="email?.errors?.['email']">
+        Por favor entre com um email valido.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="password" type="password" />
+      <mat-error *ngIf="password?.errors?.['required']">
+       Este campo é obrigatório
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Login</button>
+    <span>Novo em nossa plataforma? <a class="registo" routerLink="registo"> Regista-te</a></span>
+  </form>
+</div>
+</div>

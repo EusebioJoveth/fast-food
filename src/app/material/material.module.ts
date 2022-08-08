@@ -7,6 +7,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -18,7 +19,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatDividerModule,
     MatButtonModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule
 
 
   ],
@@ -29,7 +32,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatDividerModule,
     MatButtonModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class MaterialModule { }
