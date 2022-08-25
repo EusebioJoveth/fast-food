@@ -19,6 +19,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 
@@ -43,7 +44,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     provideFirestore(() => getFirestore()),
     provideFunctions(() => getFunctions()),
     provideMessaging(() => getMessaging()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    HotToastModule.forRoot()
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

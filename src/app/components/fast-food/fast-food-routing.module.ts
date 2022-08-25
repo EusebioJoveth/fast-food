@@ -4,9 +4,13 @@ import { HeaderComponent } from '../header/header.component';
 import { HomeComponent } from '../home/home.component';
 import { FoodPageComponent } from './food-page/food-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import {canActivate, redirectUnauthorizedTo, redirectLoggedInTo} from '@angular/fire/auth-guard';
+
+const redirectToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectToHome = () => redirectUnauthorizedTo(['fastFood']);
 
 const routes: Routes = [
-  {path: '', component: HeaderComponent,
+  {path: '', component: HeaderComponent, ...canActivate(redirectToLogin),
   children:[
     {path: '', component: HomeComponent},
     {path: 'search/:item', component: HomeComponent},

@@ -2,6 +2,7 @@ import { Foods } from 'src/app/models/food';
 import { FoodService } from './../../services/food/food.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,12 @@ export class HomeComponent implements OnInit {
   foods:Foods[] = []
   starRating = 0;
 
+  user$ = this.authService.currentUsers$;
+
   constructor(
     private serviceFood: FoodService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private authService: AuthenticationService
     ) { }
 
   ngOnInit(): void {

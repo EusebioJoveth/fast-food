@@ -4,6 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import {canActivate, redirectUnauthorizedTo, redirectLoggedInTo} from '@angular/fire/auth-guard';
+
+const redirectToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectToHome = () => redirectLoggedInTo(['fastFood']);
 
 const routes: Routes = [
 
@@ -13,8 +17,8 @@ const routes: Routes = [
 
   },
 
-  {path: 'login', component: LoginComponent},
-  {path: 'registo', component: SignUpComponent},
+  {path: 'login', component: LoginComponent, ...canActivate(redirectToHome)},
+  {path: 'registo', component: SignUpComponent, ...canActivate(redirectToHome)},
 
   { path: 'fastFood',
   loadChildren: () => import('./components/fast-food/fast-food.module')
@@ -22,7 +26,7 @@ const routes: Routes = [
 },
   {path: 'admin', component: DashboardComponent, children:[
 
-    {path: '', component: StartComponent},
+    {path: '', component: StartComponent, ...canActivate(redirectToLogin)},
 
     {path: 'employees',
     loadChildren: () => import('./components/employees/employees.module')

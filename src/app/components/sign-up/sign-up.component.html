@@ -1,1 +1,43 @@
-<p>sign-up works!</p>
+<div class="login">
+  <div class="rigth">
+    <form [formGroup]="signUpForm" class="mat-elevation-z5"
+    (ngSubmit)="submit()">
+    <h1>Regito de Novo Utilizador</h1>
+    <mat-form-field>
+      <input matInput placeholder="Nome" formControlName="name" type="text" />
+      <mat-error *ngIf="name?.errors?.['required']">
+       Este campo é obrigatório
+      </mat-error>
+    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Seu Email" formControlName="email" />
+        <mat-error *ngIf="email?.errors?.['required']">
+          Este campo é obrigatório
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">
+          Por favor entre com um email valido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password" />
+        <mat-error *ngIf="password?.errors?.['required']">
+         Este campo é obrigatório
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Confirmar a palavra pass" formControlName="confirmPassword" type="password" />
+        <mat-error *ngIf="confirmPassword?.errors?.['required']">
+         Este campo é obrigatório
+        </mat-error>
+      </mat-form-field>
+      <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+        A palavra pass não correspondem
+      </mat-error>
+      <button mat-raised-button color="primary" type="submit">Registar</button>
+      <span>Já tem conta? <a class="registo" routerLink="/login"> Login</a></span>
+    </form>
+  </div>
+  </div>
+
