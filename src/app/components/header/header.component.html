@@ -10,17 +10,17 @@
           <li>
             <button mat-button routerLink="/fastFood/cart-page">Carrinho</button>
           </li>
-          <ng-container *ngIf="authService.currentUsers$ | async as user; else loginButton">
+          <ng-container *ngIf="users$ | async as user; else loginButton">
             <li>
               <button mat-button class="userProfile" [mat-menu-trigger-for]="userMenu">
-                <mat-icon>account_circle</mat-icon>{{user.displayName}}
+                <mat-icon>account_circle</mat-icon>{{user.name}}
                 <mat-icon>expand_more</mat-icon>
               </button>
             </li>
           </ng-container>
          <ng-template #loginButton>
           <li>
-            <button routerLink="/login">
+            <button (click) ="logout()">
               <mat-icon>logout</mat-icon>Logout
             </button>
           </li>
@@ -42,6 +42,10 @@
   <button mat-menu-item (click) ="logout()">
     <mat-icon>login</mat-icon>
     Sair
+  </button>
+  <button mat-menu-item (click) ="verPerfil()">
+    <mat-icon>person</mat-icon>
+    Perfil
   </button>
 
 </mat-menu>

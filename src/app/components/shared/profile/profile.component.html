@@ -1,0 +1,53 @@
+<div class="profile"  *ngIf="user$ | async as user">
+
+  <div class="profile-image">
+    <h1>Perfil</h1>
+    <img  [src]="user.photoURL ?? 'assets/images/icons/MonoOrus.png'" [alt]="user.displayName" />
+    <button mat-mini-fab (click)="inputField.click()">
+      <mat-icon>upload_file</mat-icon>
+    </button>
+  </div>
+
+
+  <input #inputField type="file" hidden (change)="uploadImage($event, user)" >
+<form class="container" [formGroup]="profileForm" (ngSubmit)="updateProfile(user?.uid)">
+  <div class="row ml-8">
+
+    <mat-form-field class="col-md-6 mr-8">
+      <input  matInput type="text" formControlName="firstName" placeholder="Primeiro Nome" />
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input matInput type="text" formControlName="lastName" placeholder="Último Nome" />
+    </mat-form-field>
+  </div>
+
+  <div class="row ml-8">
+    <mat-form-field class="col-md-6 mr-8">
+      <input  matInput type="text" formControlName="name" placeholder="Nome" />
+    </mat-form-field>
+
+    <mat-form-field class="col-md-6">
+      <input   matInput type="text" formControlName="phone" placeholder="Telefone" />
+    </mat-form-field>
+  </div>
+    <div class="row ml-8 mb-8">
+      <mat-form-field class="col-md-6 mr-8">
+        <input  matInput type="text" formControlName="adress" placeholder="Endereço" />
+      </mat-form-field>
+      <div class="col-md-6">
+
+      </div>
+    </div>
+
+    <div class="row ml-8 mb-8">
+      <mat-dialog-actions align="start">
+        <button mat-raised-button mat-dialog-close>Cancelar</button>
+        <button mat-raised-button color="primary" type="submit" [mat-dialog-close]="true" cdkFocusInitial>Salvar</button>
+      </mat-dialog-actions>
+
+    </div>
+</form>
+</div>
+
+

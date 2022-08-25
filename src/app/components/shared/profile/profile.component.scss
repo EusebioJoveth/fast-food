@@ -1,0 +1,26 @@
+.profile{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+ // max-width: 65rem;
+  justify-content: center;
+  align-items: center;
+ // align-content: center;
+  flex-wrap: wrap;
+
+  .profile-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //align-content: center;
+
+    img{
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+}
+
+

@@ -29,7 +29,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     DashboardComponent,
     StartComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

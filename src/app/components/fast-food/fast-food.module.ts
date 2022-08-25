@@ -12,6 +12,7 @@ import { TagsComponent } from './tags/tags.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodPageComponent } from './food-page/food-page.component';
 import { NotFoundModule } from '../not-found/not-found.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NotFoundModule } from '../not-found/not-found.module';
     NgbRatingModule,
     MaterialModule,
     FormsModule,
-    NotFoundModule
+    NotFoundModule,
+    SharedModule
   ]
 })
 export class FastFoodModule { }

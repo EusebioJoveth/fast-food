@@ -3,6 +3,8 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 import { AuthenticationService } from '../../services/authentication.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -23,6 +25,7 @@ export class SignUpComponent implements OnInit {
   constructor(
     private authService: AuthenticationService,
      private toast:HotToastService, private router: Router,
+     private userService: UsersService
      ) { }
 
   ngOnInit(): void {
@@ -30,14 +33,19 @@ export class SignUpComponent implements OnInit {
 
   submit(){
     if(!this.signUpForm.valid) return;
+
     const {name, email, password} = this.signUpForm.value;
-    this.authService.signUp(name, email, password).pipe(
+    this.authService.signUp(email, password).pipe(
+      switchMap(({user: {uid} }) => this.userService.addUser(
+        {uid, email, name}
+      )),
       this.toast.observe({
         success: 'Conta criada com sucesso!',
         loading: 'Entrando...',
         error: ({message}) => `${message}`
       })
     ).subscribe(() => {
+
       this.router.navigate(['/fastFood']);
     })
 

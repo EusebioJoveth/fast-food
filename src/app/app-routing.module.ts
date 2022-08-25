@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: () => import('./components/employees/employees.module')
     .then(m=>m.EmployeesModule)
   },
+  {path: 'users',
+  loadChildren: () => import('./components/users/users.module')
+  .then(m=>m.UsersModule)
+},
 
   {path: 'chat',
     loadChildren: () => import('./components/chat/chat.module')
