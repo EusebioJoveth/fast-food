@@ -7,6 +7,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from '@angular/fire/auth';
 import { UsersService } from '../../../services/users.service';
 import { UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
+import { ProfileUser } from '../../../models/user-profile';
+import { concatMap } from 'rxjs';
 
 @UntilDestroy()
 @Component({
@@ -15,7 +17,7 @@ import { UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  user$ = this.authService.currentUsers$;
+  user$ = this.userService.currentUserProfile$;
 
   profileForm = new FormGroup({
     id: new FormControl(''),
@@ -46,8 +48,20 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  uploadImage(event:any, user:any){
-    console.log(event, user)
+  uploadImage(event:any, user:ProfileUser){
+
+    this.serviceUpload.upload(event.target.files[0], `images/profile/${user.uid}`)
+    .pipe(
+      this.toast.observe({
+        loading: 'A Imagem está sendo carregada...',
+        success: 'Imagem Carregada com sucesso',
+        error: 'Ocorreu um erro ao fazer o upload',
+      }),
+      concatMap((photoURL) =>
+        this.userService.updateUser({uid: user.uid, photoURL})
+      )
+    ).subscribe()
+
   }
 
   updateProfile(user:any){

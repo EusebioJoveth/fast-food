@@ -1,6 +1,6 @@
 export interface ProfileUser{
   uid: string;
-  email:string;
+  email?:string;
   name?:string;
   photoURL?:string;
   firstName?:string;

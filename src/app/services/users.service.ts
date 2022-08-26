@@ -31,7 +31,6 @@ export class UsersService {
     return from(setDoc(ref, user)); //setDoc Cria novo documento, updateDoc actualiza dados do documento
   }
   updateUser(user: ProfileUser):Observable<any>{
-    console.log(user)
     const ref = doc(this.firestore, 'users', user?.uid);
     return from(updateDoc(ref, {...user})); //setDoc Cria novo documento, updateDoc actualiza dados do documento
   }

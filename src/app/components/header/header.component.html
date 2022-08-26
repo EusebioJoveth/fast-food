@@ -8,14 +8,15 @@
       <nav>
         <ul>
           <li>
-            <button mat-button routerLink="/fastFood/cart-page">Carrinho</button>
+            <div class="userProfile" routerLink="/fastFood/cart-page"><span class="link">Carrinho</span></div>
           </li>
           <ng-container *ngIf="users$ | async as user; else loginButton">
             <li>
-              <button mat-button class="userProfile" [mat-menu-trigger-for]="userMenu">
-                <mat-icon>account_circle</mat-icon>{{user.name}}
+              <div  class="userProfile" [mat-menu-trigger-for]="userMenu">
+                <img class="profile-image" width="50px" height="50px" [src]="user.photoURL ?? '/src/assets/images/icons/profile.png'" />
+               <span>{{user.name}}</span>
                 <mat-icon>expand_more</mat-icon>
-              </button>
+              </div>
             </li>
           </ng-container>
          <ng-template #loginButton>
