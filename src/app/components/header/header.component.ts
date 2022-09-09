@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.authService.logot().subscribe(()=>{
       this.router.navigate(['']);
-    })
+    });
   }
 
   verPerfil(){
@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
 
-    })
+    });
 
   }
 
